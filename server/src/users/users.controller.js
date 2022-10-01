@@ -8,7 +8,7 @@ router.post("/register", async (req, res) => {
     try {
         const { name, email, password } = req.body;
         const createdUsers = await usersCreate(name, email, password);
-        res.status(200).send(createdUsers);
+        res.status(200).send(createdUsers); 
     } catch (error) {
         res.status(404).send(error.message);
     }
