@@ -7,7 +7,7 @@ const getTasksDB = async () => {
     const objStudents = (await connect.query(sqlStudents, [])).rows;
     return objStudents;
 }
-
+  
 const createTaskDB = async (user_id, task) => {
     const connect = await pool.connect();
     try {
