@@ -16,7 +16,9 @@ router.get("/:user_id", async (req, res) => {
 router.post("/:user_id", async (req, res) => {
     try {
         const { task } = req.body
+        console.log(req.params.user_id, task);
         const created = await createTask(req.params.user_id, task);
+    
         res.status(200).send(created);
     } catch (error) {
         res.status(404).send(error.message);
